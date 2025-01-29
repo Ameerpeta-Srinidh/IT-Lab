@@ -1,0 +1,30 @@
+<HTML>
+    <head>
+         <TITLE> Array initialization </TITLE>
+    </head>
+    <Body>
+         <center>
+        <SCRIPT>
+            document.write(" One way of initialization of array <br>");
+            a = new Array(5);
+            for (var i=0;i<5; i++)
+            {
+                 a[i]= i;
+                 document.write(a[i] + "<br>");
+            }
+            document.write ("another way of initialization" + " <br>");
+            b = new Array(35,78,90,54,16);
+            for (i=0;i<5; i++)
+            {
+                document.write (b[i] + " <br>");
+            }
+            document.write ("third way of initialization" + " <br>");
+            var c = Array(10,20,30,40,50); 
+            for ( i=0;i<5; i++)
+            {
+                document.write (c[i] + " <br>"); 
+            }
+         </SCRIPT>
+        </center>
+    </Body>
+</HTML>
