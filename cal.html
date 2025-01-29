@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Calendar</title>
+    <style>
+        body{
+            background-color: rgb(206, 219, 219);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        .sunday {
+            color: red;
+        }
+        .holiday {
+            color: blue;
+        }
+        .weekday {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Calendar</h1>
+    <label for="month">Month:</label>
+    <select id="month">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+    </select>
+    <label for="year">Year:</label>
+    <input type="number" id="year" value="2025" min="1900" max="2100">
+    <button onclick="generateCalendar()">Generate Calendar</button>
+    
+    <table id="calendar">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function generateCalendar() {
+            let month = parseInt(document.getElementById('month').value);
+            let year = parseInt(document.getElementById('year').value);
+            let calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
+            calendarBody.innerHTML = '';
+
+            let firstDay = new Date(year, month, 1).getDay();
+            let daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            let holidays = [1, 26];
+
+            let row = document.createElement('tr');
+            for (let i = 0; i < firstDay; i++) {
+                row.appendChild(document.createElement('td'));
+            }
+            for (let day = 1; day <= daysInMonth; day++) {
+                if (row.children.length === 7) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement('tr');
+                }
+
+                let cell = document.createElement('td');
+                cell.textContent = day;
+
+                if (new Date(year, month, day).getDay() === 0) {
+                    cell.className = 'sunday';
+                } else if (holidays.includes(day)) {
+                    cell.className = 'holiday';
+                } else {
+                    cell.className = 'weekday';
+                }
+
+                row.appendChild(cell);
+            }
+            if (row.children.length > 0) {
+                while (row.children.length < 7) {
+                    row.appendChild(document.createElement('td'));
+                }
+                calendarBody.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
