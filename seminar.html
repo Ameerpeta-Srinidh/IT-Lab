@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Seminar Registration</title>
+    <style>
+        body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d4dce6;
+        }
+        .container{
+            max-width: 800px;
+            margin: 20px auto;
+            background: #ebe7eb;
+            padding: 20px;
+           
+        }
+        .input-container{
+            max-width: 800px;
+            margin: 20px auto;
+            background: #ebe7eb;
+            padding: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        label{
+            font-weight: bold;
+        }
+        input, select, textarea, button{
+            padding: 10px;
+            font-size:small;
+            border: 1px solid rgb(170, 202, 212);
+            border-radius: 5px;
+        }
+        button{
+            background-color: #2f4e6f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #6b8eb5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>International Seminar Registration</h1>
+        <form>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="participantType">Participant Type:</label>
+            <select id="participantType" name="participantType" required>
+                <option value="" disabled selected>Select participant type</option>
+                <option value="Student">Student</option>
+                <option value="Faculty">Faculty Member</option>
+                <option value="Professional">Professional</option>
+                <option value="Company">Company/Firm Representative</option>
+            </select>
+
+            <label for="currency">Currency:</label>
+            <select id="currency" name="currency" required>
+                <option value="" disabled selected>Select currency</option>
+                <option value="INR">INR (₹)</option>
+                <option value="USD">USD ($)</option>
+            </select>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="" disabled selected>Select payment method</option>
+                <option value="CreditCard">Credit Card</option>
+                <option value="DebitCard">Debit Card</option>
+                <option value="DemandDraft">Demand Draft</option>
+            </select>
+
+            <label for="accommodation">Accommodation Preference:</label>
+            <select id="accommodation" name="accommodation" required>
+                <option value="" disabled selected>Select a hotel</option>
+                <option value="Hotel 1">Hotel 1</option>
+                <option value="Hotel 2">Hotel 2</option>
+                <option value="Hotel 3">Hotel 3</option>
+                <option value="Hotel 4">Hotel 4</option>
+            </select>
+
+            <label for="services">Required Services:</label>
+            <textarea id="services" name="services" placeholder="List your required services (e.g., WiFi, Laundry, Airport Pickup, Gym, Pool)" rows="4"></textarea>
+            <button type="submit">Register</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

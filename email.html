@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Message Interface</title>
+    <style>
+        body{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color:rgb(211, 218, 186);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label{
+            font-weight: bold;
+        }
+        input, textarea, button{
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            background-color: #435161;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #7f94aa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Message Interface</h1>
+        <form>
+            <label for="toField">To:</label>
+            <input type="text" id="toField" name="toField" value="nks@uohyd.ac.in:23mcce04@uohyd.ac.in" required>
+
+            <label for="subjectField">Subject:</label>
+            <input type="text" id="subjectField" name="subjectField" value="Srinidh Ameerpeta" required>
+
+            <label for="bodyField">Body:</label>
+            <textarea id="bodyField" name="bodyField" rows="10" required>
+Respected Sir,
+My name is Srinidh. I'm studying in I.M.Tech 2nd year. I'm currently doing the Internet Technologies course. I'm learning different types of web technologies.
+Prior to this course I did not have any knowledge about web technologies and I'm learning each technology one by one and practicing them by making different web pages.
+This course is helping me in understanding and implementing technologies like HTML,CSS and JavaScript. I hope to learn more and acquire skills to become a good Full Stack Developer.
+
+
+Best regards,
+Srinidh Ameerpeta
+23MCCE04
+            </textarea>
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+</body>
+</html>
